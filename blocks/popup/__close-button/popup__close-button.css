@@ -6,7 +6,7 @@
   height: 32px;
   background-image: url(../../../images/Close\ Icon.svg);
   background-position: center;
-  background-color: #000000;
+  background-color: transparent;
   border: none;
   border-radius: 10px;
   cursor: pointer;

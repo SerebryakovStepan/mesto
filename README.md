@@ -16,3 +16,5 @@
 * Git
 * JavaScript
 
+## поглядеть и пощуть можно тут:
+https://serebryakovstepan.github.io/mesto/
