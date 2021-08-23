@@ -1,6 +1,13 @@
-.footer__autor{
-    color: #545454;
-    font-size: 18px;
-    line-height: 22px;
-    font-style: normal;
+.footer__autor {
+  color: #545454;
+  font-size: 18px;
+  line-height: 22px;
+  font-style: normal;
+}
+
+@media screen and (max-width: 500px) {
+  .footer__autor {
+    font-size: 14px;
+    line-height: 17px;
+  }
 }

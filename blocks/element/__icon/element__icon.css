@@ -12,6 +12,6 @@
     background-color: #FFF;
 }
 
-.popup__close-button:hover {
-    opacity: 0.6;
+.element__icon:hover {
+    opacity: 0.8;
   }

@@ -15,12 +15,13 @@
     text-align: center;
     font-size: 27px;
     line-height: 33px;
-    padding-right: 15.25px;
+    padding-right: 10px;
   }
 }
 
 @media screen and (max-width: 1030px) {
   .profile__name {
    max-width: 189px;
+   margin: 0;
   }
 }
