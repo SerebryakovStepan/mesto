@@ -17,6 +17,7 @@ function togglePopup() {
 
 popupCloseButton.addEventListener("click", function () {
   togglePopup();
+  
 });
 
 form.addEventListener("submit", function (event) {
@@ -29,4 +30,4 @@ form.addEventListener("submit", function (event) {
 });
 
 openPopupButton.addEventListener("click", togglePopup);
-popupCloseButton.addEventListener("click", togglePopup);
+
