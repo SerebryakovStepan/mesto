@@ -21,7 +21,7 @@
           <div class="profile__user">
             <div class="profile__info">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <button class="profile__edit-profile" type="button"></button>
+              <button class="profile__edit-button" type="button"></button>
             </div>
             <p class="profile__description">Исследователь океана</p>
           </div>
@@ -29,82 +29,15 @@
         <button class="profile__add-button" type="button"></button>
       </section>
       <section class="elements">
-        <ul class="elements__list">
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/karachaevck.jpg"
-              alt="фото монастыря в Карачаевске"
-            />
-            <div class="element__discription">
-              <h2 class="element__title">Карачаевск</h2>
-              <button class="element__icon" type="button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/Mountain_Elbrus.jpg"
-              alt="фото горы Эльбрус"
-            />
-            <div class="element__discription">
-              <h2 class="element__title">гора Эльбрус</h2>
-              <button class="element__icon" type="button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/Dombay.svg"
-              alt="фото монастыря в Карачаевске"
-            />
-            <div class="element__discription">
-              <h2 class="element__title">Домбай</h2>
-              <button class="element__icon" type="button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/Dombay.svg"
-              alt="фото монастыря в Карачаевске"
-            />
-            <div class="element__discription">
-              <h2 class="element__title">Домбай</h2>
-              <button class="element__icon" type="button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/Dombay.svg"
-              alt="фото монастыря в Карачаевске"
-            />
-            <div class="element__discription">
-              <h2 class="element__title">Домбай</h2>
-              <button class="element__icon" type="button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/karachaevck.jpg"
-              alt="фото монастыря в Карачаевске"
-            />
-            <div class="element__discription">
-              <h2 class="element__title">Карачаево-черкесия</h2>
-              <button class="element__icon" type="button"></button>
-            </div>
-          </li>
-        </ul>
+        <ul class="elements__list"></ul>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__autor">&copy; 2020 Mesto Russia</p>
     </footer>
-    <div id="popup" class="popup">
+    <div id="popup" class="popup popup_edit-profile">
       <div class="popup__conteiner">
-        <form class="form" name="info">
+        <form class="form form_profile" name="info">
           <h2 class="form__header">Редактировать профиль</h2>
           <fieldset class="form__fieldset">
             <input
@@ -131,6 +64,56 @@
         </form>
       </div>
     </div>
+    <div id="popup" class="popup popup-card">
+      <div class="popup__conteiner">
+        <form class="form form-card" name="photo">
+          <h3 class="form__header">Новое место</h3>
+          <fieldset class="form__fieldset">
+            <input
+              class="form__input"
+              id="photo-name"
+              name="name"
+              placeholder="Название"
+              required
+              minlength="3"
+              maxlength="30"
+            />
+            <input
+              class="form__input"
+              id="photo-link"
+              type="url"
+              placeholder="Ссылка на картинку"
+              required
+              minlength="3"
+            />
+            <button class="form__save-button" type="submit">Создать</button>
+          </fieldset>
+          <button
+            class="popup__close-button popup-card__close-button"
+            type="button"
+          ></button>
+        </form>
+      </div>
+    </div>
+    <div id="popup" class="popup popup_open-image">
+      <div class="popup__conteiner">
+          <img class="popup__image" src="" alt="">
+          <h2 class="popup__title"></h2>
+          <button class="popup__close-button" type="button"></button>
+        </form>
+      </div>
+    </div>
+
+    <template class="template-card">
+      <li class="element">
+        <button class="element__delete-button" type="button"></button>
+        <img class="element__photo" src="" alt="" />
+        <div class="element__discription">
+          <h2 class="element__title"></h2>
+          <button class="element__like" type="button"></button>
+        </div>
+      </li>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-.element__icon{
+.element__like{
     min-width: 22px;
     min-height: 19px;
     background-image: url(../../../images/like.svg);
@@ -12,6 +12,6 @@
     background-color: #FFF;
 }
 
-.element__icon:hover {
+.element__like:hover {
     opacity: 0.5;
   }
