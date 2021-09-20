@@ -45,6 +45,25 @@ closeImageBtn.addEventListener("click", () => {
   togglePopup(popupImage);
 });
 
+function closePopup(popup) {
+  popup.classList.remove('popup_is-opened');
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closePopup(popupEditProfile);
+    closePopup(popupAdd);
+    closePopup(popupImage);
+  }
+});
+
+document.addEventListener('click', function(evt) {
+  if (evt.target.classList.contains('popup')) {
+    const currentPopup = evt.target.closest('.popup_is-opened');
+    closePopup(currentPopup);
+  }
+});
+
 //save
 formProfile.addEventListener("submit", function (event) {
   event.preventDefault();

@@ -29,6 +29,7 @@
         <button class="profile__add-button" type="button"></button>
       </section>
       <section class="elements">
+        <h2>123</h2>
         <ul class="elements__list"></ul>
       </section>
     </main>
@@ -39,26 +40,28 @@
       <div class="popup__conteiner">
         <form class="form form_profile" name="info">
           <h2 class="form__header">Редактировать профиль</h2>
-          <fieldset class="form__fieldset">
+          <fieldset class="popup__form">
             <input
-              class="form__input"
+              class="popup__input"
               id="profile-name"
               name="name"
               placeholder="Имя"
               required
-              minlength="3"
-              maxlength="30"
+              minlength="2"
+              maxlength="40"
             />
+            <span id="profile-name-error" class="popup__form-error"></span>
             <input
-              class="form__input"
+              class="popup__input"
               id="profile-caption"
               name="about"
               placeholder="О себе"
               required
-              minlength="3"
-              maxlength="50"
+              minlength="2"
+              maxlength="200"
             />
-            <button class="form__save-button" type="submit">Сохранить</button>
+            <span id="profile-caption-error" class="popup__form-error"></span>
+            <button class="popup__button" type="submit">Сохранить</button>
           </fieldset>
           <button class="popup__close-button" type="button"></button>
         </form>
@@ -68,25 +71,27 @@
       <div class="popup__conteiner">
         <form class="form form-card" name="photo">
           <h3 class="form__header">Новое место</h3>
-          <fieldset class="form__fieldset">
+          <fieldset class="popup__form">
             <input
-              class="form__input"
+              class="popup__input"
               id="photo-name"
               name="name"
               placeholder="Название"
               required
-              minlength="3"
+              minlength="2"
               maxlength="30"
             />
+            <span id="photo-name-error" class="popup__form-error"></span>
             <input
-              class="form__input"
+              class="popup__input"
               id="photo-link"
               type="url"
               placeholder="Ссылка на картинку"
               required
-              minlength="3"
+              minlength="2"
             />
-            <button class="form__save-button" type="submit">Создать</button>
+            <span id="photo-link-error" class="popup__form-error"></span>
+            <button class="popup__button" type="submit">Создать</button>
           </fieldset>
           <button
             class="popup__close-button popup-card__close-button"
@@ -97,9 +102,9 @@
     </div>
     <div id="popup-image" class="popup popup_open-image">
       <div class="popup__conteiner">
-          <img class="popup__image" src="#" alt="#">
-          <h2 class="popup__title"></h2>
-          <button class="popup__close-button" type="button"></button>
+        <img class="popup__image" src="#" alt="#" />
+        <h2 class="popup__title">123</h2>
+        <button class="popup__close-button" type="button"></button>
       </div>
     </div>
 
@@ -113,7 +118,8 @@
         </div>
       </li>
     </template>
-    <script src="./scripts/initial-сards.js"></script> 
+    <script src="./scripts/validate.js"></script>
+    <script src="./scripts/initial-сards.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
