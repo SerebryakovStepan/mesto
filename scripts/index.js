@@ -34,35 +34,49 @@ openEditProfilePopupBtn.addEventListener("click", () => {
     jobInput.value = aboutUser.textContent;
   }
   togglePopup(popupEditProfile);
+
+  document.addEventListener('keydown', closeByEscape);
+ 
 });
 profilAddButton.addEventListener("click", () => {
   togglePopup(popupAdd);
+  document.addEventListener('keydown', closeByEscape);
+  
 });
 popupAddCloseButton.addEventListener("click", () => {
   togglePopup(popupAdd);
+  document.addEventListener('keydown', closeByEscape);
+  
 });
 closeImageBtn.addEventListener("click", () => {
   togglePopup(popupImage);
+  document.addEventListener('keydown', closeByEscape);
+  
 });
 
 function closePopup(popup) {
   popup.classList.remove('popup_is-opened');
+};
+
+function closeByEscape(evt) {
+  if (evt.key ==='Escape') {
+    const popupIsOpened = document.querySelector('.popup_is-opened')
+    closePopup(popupIsOpened);
+    document.removeEventListener('keydown', closeByEscape);
+  }
 }
 
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    closePopup(popupEditProfile);
-    closePopup(popupAdd);
-    closePopup(popupImage);
-  }
-});
-
-document.addEventListener('click', function(evt) {
+function handleOverlayClick(evt) {
   if (evt.target.classList.contains('popup')) {
     const currentPopup = evt.target.closest('.popup_is-opened');
     closePopup(currentPopup);
   }
-});
+};
+
+popupEditProfile.addEventListener('click', handleOverlayClick);
+popupAdd.addEventListener('click', handleOverlayClick);
+popupImage.addEventListener('click', handleOverlayClick); 
+
 
 //save
 formProfile.addEventListener("submit", function (event) {
@@ -129,11 +143,9 @@ function createCard(data){
   
  
  cardImage.addEventListener('click', (event) => {
-  zoomedImage.src = event.target.src;
-  zoomedImage.alt = zoomedImageTitle.textContent = event.target.closest('.element')
-  .querySelector('.element__title').textContent;
-  zoomedImageTitle.textContent = event.target.closest('.element')
-  .querySelector('.element__title').textContent;
+  zoomedImage.src = data.link;
+  zoomedImage.alt = data.name;
+  zoomedImageTitle.textContent = data.name;
    
   togglePopup(popupImage);
  });
