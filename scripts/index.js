@@ -20,43 +20,47 @@ const zoomedImage = popupImage.querySelector('.popup__image');
 const zoomedImageTitle = popupImage.querySelector('.popup__title');
 const closeImageBtn = popupImage.querySelector('.popup__close-button');
 
-function togglePopup(popup) {
-  popup.classList.toggle("popup_is-opened");
-}
 
 //open-close
+
+function openPopup(popup) {
+  popup.classList.add("popup_is-opened");
+  document.addEventListener('keydown', closeByEscape);
+}
+
+function closePopup(popup) {
+  popup.classList.remove('popup_is-opened');
+  document.removeEventListener('keydown', closeByEscape);
+};
+
 popupCloseButton.addEventListener("click", () => {
-  togglePopup(popupEditProfile);
+  closePopup(popupEditProfile);
 });
 openEditProfilePopupBtn.addEventListener("click", () => {
   if (!popup.classList.contains("popup_is-opened")) {
     nameInput.value = userName.textContent;
     jobInput.value = aboutUser.textContent;
   }
-  togglePopup(popupEditProfile);
+  openPopup(popupEditProfile);
 
   document.addEventListener('keydown', closeByEscape);
  
 });
 profilAddButton.addEventListener("click", () => {
-  togglePopup(popupAdd);
+  openPopup(popupAdd);
   document.addEventListener('keydown', closeByEscape);
   
 });
 popupAddCloseButton.addEventListener("click", () => {
-  togglePopup(popupAdd);
+  closePopup(popupAdd);
   document.addEventListener('keydown', closeByEscape);
   
 });
 closeImageBtn.addEventListener("click", () => {
-  togglePopup(popupImage);
+  closePopup(popupImage);
   document.addEventListener('keydown', closeByEscape);
   
 });
-
-function closePopup(popup) {
-  popup.classList.remove('popup_is-opened');
-};
 
 function closeByEscape(evt) {
   if (evt.key ==='Escape') {
@@ -85,7 +89,7 @@ formProfile.addEventListener("submit", function (event) {
   userName.textContent = nameInput.value;
   aboutUser.textContent = jobInput.value;
 
-  togglePopup(popupEditProfile);
+  closePopup(popupEditProfile);
 });
 
 
@@ -95,7 +99,7 @@ formCard.addEventListener("submit", function (event) {
   renderCard({name: nameCard.value, link: urlCard.value});
 
   formCard.reset()
-  togglePopup(popupAdd);
+  closePopup(popupAdd);
 });
 
 
@@ -147,7 +151,7 @@ function createCard(data){
   zoomedImage.alt = data.name;
   zoomedImageTitle.textContent = data.name;
    
-  togglePopup(popupImage);
+  openPopup(popupImage);
  });
  return cardElement;
 };
