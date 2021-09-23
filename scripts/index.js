@@ -42,23 +42,18 @@ openEditProfilePopupBtn.addEventListener("click", () => {
     jobInput.value = aboutUser.textContent;
   }
   openPopup(popupEditProfile);
-
-  document.addEventListener('keydown', closeByEscape);
  
 });
 profilAddButton.addEventListener("click", () => {
   openPopup(popupAdd);
-  document.addEventListener('keydown', closeByEscape);
   
 });
 popupAddCloseButton.addEventListener("click", () => {
   closePopup(popupAdd);
-  document.addEventListener('keydown', closeByEscape);
   
 });
 closeImageBtn.addEventListener("click", () => {
   closePopup(popupImage);
-  document.addEventListener('keydown', closeByEscape);
   
 });
 
@@ -66,7 +61,6 @@ function closeByEscape(evt) {
   if (evt.key ==='Escape') {
     const popupIsOpened = document.querySelector('.popup_is-opened')
     closePopup(popupIsOpened);
-    document.removeEventListener('keydown', closeByEscape);
   }
 }
 
