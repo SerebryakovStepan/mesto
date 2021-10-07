@@ -29,7 +29,16 @@
         <button class="profile__add-button" type="button"></button>
       </section>
       <section class="elements">
-        <ul class="elements__list"></ul>
+        <template class="elements__list">
+          <div class="element">
+            <button class="element__delete-button" type="button"></button>
+            <img class="element__photo" src="#">
+            <div class="element__discription">
+              <h2 class="element__title">Карачаево-Черкесия</h2>
+              <button class="element__like" type="button"></button>
+            </div>
+          </div>
+        </template>
       </section>
     </main>
     <footer class="footer">
@@ -107,18 +116,6 @@
       </div>
     </div>
 
-    <template class="template-card">
-      <li class="element">
-        <button class="element__delete-button" type="button"></button>
-        <img class="element__photo" src="#" alt="#" />
-        <div class="element__discription">
-          <h2 class="element__title"></h2>
-          <button class="element__like" type="button"></button>
-        </div>
-      </li>
-    </template>
-    <script src="./scripts/validate.js"></script>
-    <script src="./scripts/initial-сards.js"></script>
-    <script src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
